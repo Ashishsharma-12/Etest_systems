@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 21, 2020 at 04:13 PM
+-- Generation Time: Dec 21, 2020 at 05:10 PM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.5
 
@@ -115,6 +115,7 @@ CREATE TABLE `tbl_advertisement` (
   `advertisement_id` varchar(11) DEFAULT NULL,
   `advertisement_name` varchar(100) DEFAULT NULL,
   `advertisement_image` varchar(500) DEFAULT NULL,
+  `advertisement_valid_from` timestamp NULL DEFAULT NULL,
   `advertisement_expiry_date` datetime DEFAULT NULL,
   `created_by` varchar(100) DEFAULT NULL,
   `modified_by` varchar(100) DEFAULT NULL,
@@ -271,7 +272,7 @@ CREATE TABLE `tbl_category` (
 
 INSERT INTO `tbl_category` (`id`, `category_id`, `category_name`, `created_by`, `modified_by`, `created_date`, `modified_date`, `currentStatus`) VALUES
 (5, '456789', 'mathematics1', 'ashish', 'ashish', '2020-12-17 21:58:59', '2020-12-17 21:58:59', 'n'),
-(6, '179642 ', 'history1212', '', '', '2020-12-20 09:22:57', '2020-12-20 09:22:57', 'y');
+(8, '597974', 'computer electric', 'kjsyfs', 'yusjv', '2020-12-21 21:10:09', '2020-12-21 21:10:09', 'n');
 
 -- --------------------------------------------------------
 
@@ -386,9 +387,7 @@ CREATE TABLE `tbl_department` (
 --
 
 INSERT INTO `tbl_department` (`id`, `department_id`, `department_name`, `created_by`, `modified_by`, `created_date`, `modified_date`, `currentStatus`) VALUES
-(5, '41276', 'ashitosh', '', '', '2020-12-12 20:53:33', '2020-12-12 20:53:33', 'n'),
-(6, '799743', 'ashish', 'created_by', 'modified_by', '2020-12-17 20:39:54', '2020-12-17 20:39:54', 'y'),
-(8, '306964', 'hello', 'created_by', 'modified_by', '2020-12-20 09:57:04', '2020-12-20 09:57:04', 'n');
+(9, '796708', 'computer science', 'created_by', 'modified_by', '2020-12-21 21:05:44', '2020-12-21 21:05:44', 'n');
 
 -- --------------------------------------------------------
 
@@ -440,7 +439,7 @@ CREATE TABLE `tbl_notice` (
 --
 
 INSERT INTO `tbl_notice` (`id`, `notice_id`, `notice_title`, `notice_description`, `created_by`, `modified_by`, `created_date`, `modified_date`, `currentStatus`) VALUES
-(3, '518665', 'dsgv', 'savdsbzh', 'created_by', 'modified_by', '2020-12-21 20:00:30', '2020-12-21 20:03:56', 'y');
+(4, '785231', 'demo notice 16544', ' demo notice sakjviusdgvudfusvg yadfvadsiv yqewbcfb76545465135', 'created_by', 'modified_by', '2020-12-21 21:17:22', '2020-12-21 21:17:44', 'n');
 
 -- --------------------------------------------------------
 
@@ -511,7 +510,8 @@ CREATE TABLE `tbl_subjects` (
 INSERT INTO `tbl_subjects` (`id`, `subject_id`, `department_id`, `category_id`, `subject_name`, `created_by`, `modified_by`, `created_date`, `modified_date`, `currentStatus`) VALUES
 (1, '195876 ', NULL, NULL, 'fSegvzdgz', '', '', '2020-12-03 10:57:28', '2020-12-03 10:57:28', 'n'),
 (7, '894082', 'dept', 'cat', 'testing12222', 'name', '', '2020-12-20 09:19:22', '2020-12-20 09:19:22', 'y'),
-(8, '135530', 'dept', 'cat', 'ashish1222233333', 'name', '', '2020-12-20 09:19:40', '2020-12-20 09:19:40', 'y');
+(8, '135530', 'dept', 'cat', 'ashish1222233333', 'name', '', '2020-12-20 09:19:40', '2020-12-20 09:19:40', 'y'),
+(9, '392040', 'dept', 'cat', 'CAO 3', 'name', 'name', '2020-12-21 21:11:52', '2020-12-21 21:11:52', 'n');
 
 -- --------------------------------------------------------
 
@@ -537,7 +537,8 @@ CREATE TABLE `tbl_subject_info` (
 --
 
 INSERT INTO `tbl_subject_info` (`id`, `subject_info_id`, `subject_id`, `subject_info`, `subject_image`, `created_by`, `modified_by`, `created_date`, `modified_date`, `currentStatus`) VALUES
-(4, '612580', '466040', 'Aladin', '_hand.jpg', 'GV', 'asis sarma', '2020-12-20 07:55:46', '2020-12-20 07:55:46', 'y');
+(4, '612580', '466040', 'Aladin', '_hand.jpg', 'GV', 'asis sarma', '2020-12-20 07:55:46', '2020-12-20 07:55:46', 'y'),
+(5, '884560', '135530', 'this is test decription', '_logo.jpg', 'GV', 'asis sarma', '2020-12-21 21:14:48', '2020-12-21 21:14:48', 'n');
 
 -- --------------------------------------------------------
 
@@ -607,7 +608,8 @@ CREATE TABLE `tbl_user_registration` (
 --
 
 INSERT INTO `tbl_user_registration` (`id`, `user_id`, `user_type`, `first_name`, `last_name`, `gender`, `address`, `mobile`, `email`, `password`, `image`, `created_by`, `modified_by`, `created_date`, `modified_date`, `currentStatus`) VALUES
-(1, '615170', NULL, 'Ashish', 'Sharma', 'male', 'xascascxasdsca', '8530941117', 'admin@gmail.com', 'e10adc3949ba59abbe56e057f20f883e', '1_logo.jpg', 'abcd', 'admin@gmail.com', '2020-12-17 20:50:43', '2020-12-21 19:44:39', 'y');
+(1, '615170', NULL, 'Ashish', 'Sharma', 'male', 'xascascxasdsca', '8530941117', 'admin@gmail.com', 'e10adc3949ba59abbe56e057f20f883e', '1_logo.jpg', 'abcd', 'admin@gmail.com', '2020-12-17 20:50:43', '2020-12-21 19:44:39', 'y'),
+(3, '72129', NULL, 'Gayatri', 'Vaidya', 'female', '16, JAIWANT NAGARNEAR SAHYANDRI LAWN', '8530941117', 'gv@gmail.com', 'e10adc3949ba59abbe56e057f20f883e', '72129_logo.jpg', 'abcd', 'gv@gmail.com', '2020-12-21 21:16:40', '2020-12-21 21:16:40', 'y');
 
 --
 -- Indexes for dumped tables
@@ -826,7 +828,7 @@ ALTER TABLE `tbl_candidate_registration`
 -- AUTO_INCREMENT for table `tbl_category`
 --
 ALTER TABLE `tbl_category`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `tbl_client_logo`
@@ -850,7 +852,7 @@ ALTER TABLE `tbl_client_registration`
 -- AUTO_INCREMENT for table `tbl_department`
 --
 ALTER TABLE `tbl_department`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `tbl_new_test`
@@ -862,7 +864,7 @@ ALTER TABLE `tbl_new_test`
 -- AUTO_INCREMENT for table `tbl_notice`
 --
 ALTER TABLE `tbl_notice`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `tbl_questions`
@@ -874,13 +876,13 @@ ALTER TABLE `tbl_questions`
 -- AUTO_INCREMENT for table `tbl_subjects`
 --
 ALTER TABLE `tbl_subjects`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `tbl_subject_info`
 --
 ALTER TABLE `tbl_subject_info`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `tbl_term_condition`
@@ -898,7 +900,7 @@ ALTER TABLE `tbl_user_permission`
 -- AUTO_INCREMENT for table `tbl_user_registration`
 --
 ALTER TABLE `tbl_user_registration`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
